@@ -10,9 +10,8 @@ class Home extends Component {
       topic: "",
       start: 2018,
       end: 2018,
-      searchResults: [],
-      savedArticles: ["article 1","article 2","article 3"]
-    };
+      searchResults: []
+        };
   }
 
   handleTopic = (event) => {
@@ -44,7 +43,7 @@ class Home extends Component {
           returns.push({webUrl: currentUrl, title: currentTitle});
           this.setState({ searchResults: returns });
         };
-
+        
     })
     .catch((error)=>{
       console.log(error);
@@ -54,6 +53,7 @@ class Home extends Component {
     start: 2018,
     end: 2018
   });
+  
   }
 
   saveArticle = (event) => {
@@ -61,10 +61,20 @@ class Home extends Component {
     const index = event.target.name;
     console.log("index: " + index);
     console.log("article: " + this.state.searchResults[index].title);
-	  API.saveArticle(this.state.searchResults[index]).then((response) => {
-      // this.getArticles();
+
+    axios({
+      method: 'post',
+      url: '/api/articles',
+      data: {
+        title: this.state.searchResults[index].title,
+        weburl: this.state.searchResults[index].webUrl
+      }
     });
-	}
+
+    this.props.getSaved();
+  }
+  
+
 
   render() {
     return (

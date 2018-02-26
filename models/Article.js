@@ -9,11 +9,11 @@ var ArticleSchema = new Schema({
 
   title: {
     type: String,
-    required: true
+    required: false
   },
   webUrl: {
     type: String,
-    required: true
+    required: false
   }
 
 });
