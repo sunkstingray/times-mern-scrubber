@@ -11,12 +11,12 @@ This app allows users to run a New York Times article search, by entering search
 
 This app utilizes the following:
 
-*MongoDB
-*Express.js
-*React.js
-*Node.js
-*Axios
-*body-parser
+* MongoDB
+* Express.js
+* React.js
+* Node.js
+* Axios
+* body-parser
 
 ### Screenshot
 
