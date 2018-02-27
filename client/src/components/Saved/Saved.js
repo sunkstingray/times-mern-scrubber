@@ -9,7 +9,7 @@ const Saved = props =>
         <ul className="list-group list-group-flush">
           {props.savedArticles.map((article, i) => (
                   <li key={i} id={"result_"+(i+1)} className="well list-group-item">
-                  <a href={article.webUrl}>{article.title}</a><button name={article.id} className="btn btn-primary btn-sm float-right" onClick={props.deleteArticle} type="button">Delete</button>
+                  <a href={article.webUrl}>{article.title}</a><button name={article.id} className="btn btn-danger btn-sm float-right" onClick={props.deleteArticle} type="button">Delete</button>
                   </li>
                 ))
               }
