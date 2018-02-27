@@ -1,0 +1,49 @@
+body {
+    background-image: url("/images/paper.jpg")
+}
+
+.card {
+    margin-bottom: 20px;
+    border: 2px solid black;
+    box-shadow: 6px 6px 20px gray;
+}
+
+.jumbotron {
+    background-color: greenyellow;
+    margin-top: 20px;
+    border: 2px solid black;
+    box-shadow: 6px 6px 20px gray;
+}
+
+.card-header {
+    background-color: greenyellow;
+}
+
+h1,h2,h3 {
+    font-family: 'Bangers', cursive;
+}
+
+/* unvisited link */
+a:link {
+    color: #264d29;
+}
+
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: black;
+}
+
+/* selected link */
+a:active {
+    color: greenyellow;
+}
+
+.pub-date {
+    font-size: 10px;
+    font-style: italic;
+}
