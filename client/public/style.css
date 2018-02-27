@@ -42,3 +42,8 @@ a:hover {
 a:active {
     color: greenyellow;
 }
+
+.pub-date {
+    font-size: 10px;
+    font-style: italic;
+}

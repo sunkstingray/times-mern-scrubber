@@ -34,7 +34,7 @@ class Home extends Component {
     params += "&q="+topic;
     params += "&begin_date="+start+"0101";
     params += "&end_date="+end+"1231";
-    params += "&fl=web_url,headline"
+    params += "&fl=web_url,headline,pub_date"
     params += "&page=0"
 
     axios.get(baseurl+params)
@@ -45,7 +45,8 @@ class Home extends Component {
       for (let i = 0; i < nytArticles.length; ++i){
           const currentUrl = response.data.response.docs[i].web_url;
           const currentTitle = response.data.response.docs[i].headline.main;
-          returns.push({webUrl: currentUrl, title: currentTitle});
+          const currentDate = response.data.response.docs[i].pub_date;
+          returns.push({webUrl: currentUrl, title: currentTitle, pub_date: currentDate});
           this.setState({ searchResults: returns });
         };
         
@@ -73,7 +74,8 @@ class Home extends Component {
       url: '/api/articles',
       data: {
         title: this.state.searchResults[index].title,
-        weburl: this.state.searchResults[index].webUrl
+        weburl: this.state.searchResults[index].webUrl,
+        pub_date: this.state.searchResults[index].pub_date
       }
     });
 
@@ -142,7 +144,8 @@ class Home extends Component {
               <ul className="list-group list-group-flush">
               {this.state.searchResults.map((article, i) => (
                   <li key={i} id={"result_"+(i+1)} className="well list-group-item">
-                    <a href={article.webUrl} target="_blank">{article.title}</a><button name={i} className="btn btn-primary btn-sm float-right" onClick={this.saveArticle} type="button">Save</button>
+                    <div><a href={article.webUrl} target="_blank">{article.title} _ <span className="pub-date">{article.pub_date}</span></a></div>
+                    <div><button name={i} className="btn btn-primary btn-sm float-right" onClick={this.saveArticle} type="button">Save</button></div>
                   </li>
                 ))
               }

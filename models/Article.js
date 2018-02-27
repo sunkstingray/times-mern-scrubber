@@ -14,6 +14,10 @@ var ArticleSchema = new Schema({
   webUrl: {
     type: String,
     required: false
+  },
+  pub_date: {
+    type: String,
+    required: false
   }
 
 });

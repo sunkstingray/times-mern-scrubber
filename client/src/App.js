@@ -42,7 +42,8 @@ class App extends Component {
         const currentId = response.data[index]._id;
         const currentTitle = response.data[index].title;
         const currentWebUrl = response.data[index].webUrl;
-        saved.push({id: currentId, title: currentTitle, webUrl: currentWebUrl});
+        const currentDate = response.data[index].pub_date;
+        saved.push({id: currentId, title: currentTitle, webUrl: currentWebUrl, pub_date: currentDate});
         this.setState({ savedArticles: saved });
       }
     })

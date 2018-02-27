@@ -46,6 +46,7 @@ app.post("/api/articles", function(req, res) {
 
   articleInfo.title = req.body.title;
   articleInfo.webUrl = req.body.weburl;
+  articleInfo.pub_date = req.body.pub_date;
   console.log("articleInfo: " + req.body.webUrl);
   db.Article.create(articleInfo)
   .then(function(dbArticle) {
