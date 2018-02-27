@@ -18,4 +18,6 @@ This app utilizes the following:
 *Axios
 *body-parser
 
+### Screenshot
+
 ![Screenshot](screenshot.jpg)
