@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Home from "./components/Home";
 import Saved from "./components/Saved";
-//import API from "./src/utils/API";
 
 
-
+//Main react component
 class App extends Component {
   constructor(props) {
     super(props);
@@ -18,6 +17,7 @@ class App extends Component {
     this.getSaved();
   }
 
+  //Method that deletes an article
   deleteArticle = (event) => {
     const deleteId = event.target.name;
     axios.post('/api/delete', {
@@ -33,6 +33,7 @@ class App extends Component {
     this.getSaved();
   }
 
+  //Method to get saved articles
   getSaved = () => {
     axios.get('/api/articles')
     .then((response) =>{

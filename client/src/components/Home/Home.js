@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import API from "../../utils/API";
-
 
 class Home extends Component {
   constructor(props) {
@@ -13,7 +11,7 @@ class Home extends Component {
       searchResults: []
         };
   }
-
+  //Method to handle changes to input fields
   handleInputChange = event => {
     // Destructure the name and value properties off of event.target
     // Update the appropriate state
@@ -23,6 +21,7 @@ class Home extends Component {
     });
   };
 
+  //Method to handle form submit
   onSubmit = (event) => {
     event.preventDefault();
     // get our form data out of state
@@ -38,7 +37,6 @@ class Home extends Component {
     params += "&fl=web_url,headline"
     params += "&page=0"
 
-    //const self = this;
     axios.get(baseurl+params)
       .then((response)=>{
       const nytArticles = response.data.response.docs;
@@ -63,6 +61,7 @@ class Home extends Component {
   
   }
 
+  //Method to handle saving an article
   saveArticle = (event) => {
     event.preventDefault();
     const index = event.target.name;
